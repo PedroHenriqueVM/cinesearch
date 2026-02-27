@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+
+<div class="erro-container">
+
+    <img src="{{ url_for('static', filename='500.jpg') }}" alt="Erro 500">
+
+    <a href="{{ url_for('home') }}" class="btn-voltar">
+        Voltar para página inicial
+    </a>
+
+</div>
+
+{% endblock %}

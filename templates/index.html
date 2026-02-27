@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+
+<div class="busca-container">
+
+    <form action="/buscar" method="POST">
+        <input type="text" name="nome" placeholder="Digite o nome do filme" autocomplete="off" required>
+        <button type="submit">Buscar</button>
+    </form>
+
+    <h2>Ou buscar por gênero</h2>
+
+    <form action="/buscar" method="POST">
+        <select name="genero">
+            <option value="28">Ação</option>
+            <option value="35">Comédia</option>
+            <option value="18">Drama</option>
+            <option value="27">Terror</option>
+            <option value="10749">Romance</option>
+        </select>
+        <button type="submit">Buscar</button>
+    </form>
+
+</div>
+
+{% endblock %}

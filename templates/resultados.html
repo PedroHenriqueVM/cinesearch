@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+
+<div class="resultados">
+    <a href="/" class="btn-voltar">Voltar</a>
+
+{% for filme in filmes %}
+
+<div class="card">
+
+    {% if filme.banner %}
+    <img src="https://image.tmdb.org/t/p/w780{{ filme.banner }}">
+    {% endif %}
+
+    <div class="info">
+        <h2>{{ filme.titulo }}</h2>
+
+        <p><strong>Sinopse:</strong> {{ filme.sinopse }}</p>
+        <p><strong>Duração:</strong> {{ filme.duracao }} minutos</p>
+        <p><strong>Nota:</strong> ⭐ {{ filme.nota }}</p>
+
+        {% if filme.classificacao %}
+            <p><strong>Classificação:</strong> 18+</p>
+        {% else %}
+            <p><strong>Classificação:</strong> Livre</p>
+        {% endif %}
+
+        <p><strong>Disponível em:</strong></p>
+
+        {% for provedor in filme.provedores %}
+            <span class="provedor">{{ provedor.provider_name }}</span>
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}
